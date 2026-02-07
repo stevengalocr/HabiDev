@@ -1,0 +1,62 @@
+{
+  "auth": {
+    "login": {
+      "title": "Welcome",
+      "subtitle": "Your personal growth space",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password here",
+      "forgotPassword": "Forgot your password?",
+      "loginButton": "Sign In",
+      "orContinueWith": "or continue with",
+      "newHere": "New here?",
+      "createAccount": "Create an account",
+      "loginError": "Login error"
+    },
+    "register": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "e.g. John Doe",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Create your password",
+      "confirmPasswordLabel": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "registerButton": "Create Account",
+      "alreadyHaveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "termsPrefix": "By signing up, you agree to our",
+      "terms": "Terms",
+      "and": "and",
+      "privacyPolicy": "Privacy Policy",
+      "accountCreated": "Account created!",
+      "verifyEmail": "Please verify your email to activate your account.",
+      "goToLogin": "Go to Login",
+      "registerError": "Registration error"
+    },
+    "forgotPassword": {
+      "title": "Recover Account",
+      "subtitle": "We'll send you instructions to your email",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "Enter your account email",
+      "sendButton": "Send Instructions",
+      "backToLogin": "Back to Login",
+      "emailSent": "Email sent!",
+      "checkInbox": "Check your inbox to reset your password.",
+      "sendError": "Send error"
+    },
+    "validation": {
+      "emailRequired": "Email address is required",
+      "emailInvalid": "Invalid email format",
+      "emailTooLong": "Email address is too long",
+      "passwordRequired": "Password is required",
+      "confirmPasswordRequired": "Please confirm your password",
+      "passwordsNoMatch": "Passwords do not match",
+      "nameRequired": "Full name is required",
+      "nameTooShort": "Name is too short",
+      "fullNameRequired": "Enter your first and last name",
+      "nameInvalidChars": "Name contains invalid characters"
+    }
+  }
+}

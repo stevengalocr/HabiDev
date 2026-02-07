@@ -12,6 +12,7 @@ import {
   Text,
   View,
 } from "react-native";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../src/components/ui/Button";
 import { Input } from "../../src/components/ui/Input";
 import { TugaAvatar } from "../../src/components/ui/TugaAvatar";
@@ -21,6 +22,7 @@ import { typography } from "../../src/theme/typography";
 import { formatAuthError, validateEmail } from "../../src/utils/validation";
 
 export default function ForgotPasswordScreen() {
+  const { t } = useTranslation();
   const { resetPassword } = useAuth();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -47,9 +49,14 @@ export default function ForgotPasswordScreen() {
     }
 
     Alert.alert(
-      "Correo enviado",
-      "Revisa tu bandeja de entrada para restablecer tu contraseña.",
-      [{ text: "Volver al Login", onPress: () => router.back() }],
+      t("auth.forgotPassword.emailSent"),
+      t("auth.forgotPassword.checkInbox"),
+      [
+        {
+          text: t("auth.forgotPassword.goToLogin"),
+          onPress: () => router.back(),
+        },
+      ],
     );
   };
 
@@ -73,16 +80,16 @@ export default function ForgotPasswordScreen() {
               imageSource={require("../../assets/forgot-password.png")}
             />
 
-            <Text style={styles.title}>Recuperar Cuenta</Text>
+            <Text style={styles.title}>{t("auth.forgotPassword.title")}</Text>
             <Text style={styles.subtitle}>
-              Te enviaremos las instrucciones a tu correo
+              {t("auth.forgotPassword.subtitle")}
             </Text>
           </View>
 
           <View style={styles.form}>
             <Input
-              label="Correo Electrónico"
-              placeholder="Ingresa el correo de tu cuenta"
+              label={t("auth.forgotPassword.emailLabel")}
+              placeholder={t("auth.forgotPassword.emailPlaceholder")}
               value={email}
               onChangeText={(text) => {
                 setEmail(text);
@@ -96,7 +103,7 @@ export default function ForgotPasswordScreen() {
             />
 
             <Button
-              title="Enviar Instrucciones"
+              title={t("auth.forgotPassword.sendButton")}
               onPress={handleResetPassword}
               isLoading={isLoading}
               fullWidth
@@ -110,7 +117,9 @@ export default function ForgotPasswordScreen() {
                   size={20}
                   color={Colors.textSecondary}
                 />
-                <Text style={styles.backButtonText}>Volver al Inicio</Text>
+                <Text style={styles.backButtonText}>
+                  {t("auth.forgotPassword.backToLogin")}
+                </Text>
               </Pressable>
             </Link>
           </View>

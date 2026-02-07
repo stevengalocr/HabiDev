@@ -11,6 +11,7 @@ import {
   Text,
   View,
 } from "react-native";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../src/components/ui/Button";
 import { Input } from "../../src/components/ui/Input";
 import { TugaAvatar } from "../../src/components/ui/TugaAvatar";
@@ -26,6 +27,7 @@ import {
 } from "../../src/utils/validation";
 
 export default function RegisterScreen() {
+  const { t } = useTranslation();
   const { signUp } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -119,8 +121,8 @@ export default function RegisterScreen() {
           {/* Form */}
           <View style={styles.form}>
             <Input
-              label="Nombre Completo"
-              placeholder="Ej. HabiDev"
+              label={t("auth.register.nameLabel")}
+              placeholder={t("auth.register.namePlaceholder")}
               value={fullName}
               onChangeText={(text) => {
                 setFullName(text);
@@ -132,8 +134,8 @@ export default function RegisterScreen() {
             />
 
             <Input
-              label="Correo Electrónico"
-              placeholder="Ingresa tu correo electrónico"
+              label={t("auth.register.emailLabel")}
+              placeholder={t("auth.register.emailPlaceholder")}
               value={email}
               onChangeText={(text) => {
                 setEmail(text);
@@ -147,8 +149,8 @@ export default function RegisterScreen() {
             />
 
             <Input
-              label="Contraseña"
-              placeholder="Crea tu contraseña"
+              label={t("auth.register.passwordLabel")}
+              placeholder={t("auth.register.passwordPlaceholder")}
               value={password}
               onChangeText={(text) => {
                 setPassword(text);
@@ -161,8 +163,8 @@ export default function RegisterScreen() {
             />
 
             <Input
-              label="Confirmar Contraseña"
-              placeholder="Vuelve a escribir tu contraseña"
+              label={t("auth.register.confirmPasswordLabel")}
+              placeholder={t("auth.register.confirmPasswordPlaceholder")}
               value={confirmPassword}
               onChangeText={(text) => {
                 setConfirmPassword(text);
@@ -176,14 +178,18 @@ export default function RegisterScreen() {
 
             <View style={styles.termsContainer}>
               <Text style={styles.termsText}>
-                Al registrarte, aceptas nuestros{" "}
-                <Text style={styles.linkText}>Términos</Text> y{" "}
-                <Text style={styles.linkText}>Política de Privacidad</Text>.
+                {t("auth.register.termsPrefix")}{" "}
+                <Text style={styles.linkText}>{t("auth.register.terms")}</Text>{" "}
+                {t("auth.register.and")}{" "}
+                <Text style={styles.linkText}>
+                  {t("auth.register.privacyPolicy")}
+                </Text>
+                .
               </Text>
             </View>
 
             <Button
-              title="Crear Cuenta"
+              title={t("auth.register.registerButton")}
               onPress={handleRegister}
               isLoading={isLoading}
               fullWidth
@@ -191,10 +197,14 @@ export default function RegisterScreen() {
             />
 
             <View style={styles.footer}>
-              <Text style={styles.footerText}>¿Ya tienes cuenta? </Text>
+              <Text style={styles.footerText}>
+                {t("auth.register.alreadyHaveAccount")}{" "}
+              </Text>
               <Link href="/(auth)/login" asChild>
                 <Pressable>
-                  <Text style={styles.footerLink}>Inicia sesión</Text>
+                  <Text style={styles.footerLink}>
+                    {t("auth.register.signIn")}
+                  </Text>
                 </Pressable>
               </Link>
             </View>

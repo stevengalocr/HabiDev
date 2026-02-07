@@ -11,9 +11,10 @@ import {
   Text,
   View,
 } from "react-native";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../src/components/ui/Button";
 import { Input } from "../../src/components/ui/Input";
-import { TugaAvatar } from "../../src/components/ui/TugaAvatar"; // New component
+import { TugaAvatar } from "../../src/components/ui/TugaAvatar";
 import { useAuth } from "../../src/contexts/AuthContext";
 import { Colors } from "../../src/theme/Colors";
 import { typography } from "../../src/theme/typography";
@@ -24,6 +25,7 @@ import {
 } from "../../src/utils/validation";
 
 export default function LoginScreen() {
+  const { t } = useTranslation();
   const { signIn } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -58,7 +60,7 @@ export default function LoginScreen() {
 
     if (error) {
       const friendlyError = formatAuthError(error);
-      Alert.alert("Error al iniciar sesión", friendlyError);
+      Alert.alert(t("auth.login.loginError"), friendlyError);
       return;
     }
 
@@ -85,17 +87,15 @@ export default function LoginScreen() {
               animated={true}
               imageSource={require("../../assets/logo.png")}
             />
-            <Text style={styles.title}>Bienvenido</Text>
-            <Text style={styles.subtitle}>
-              Tu espacio de crecimiento personal
-            </Text>
+            <Text style={styles.title}>{t("auth.login.title")}</Text>
+            <Text style={styles.subtitle}>{t("auth.login.subtitle")}</Text>
           </View>
 
           {/* Form */}
           <View style={styles.form}>
             <Input
-              label="Correo Electrónico"
-              placeholder="Ingresa tu correo electrónico"
+              label={t("auth.login.emailLabel")}
+              placeholder={t("auth.login.emailPlaceholder")}
               value={email}
               onChangeText={(text) => {
                 setEmail(text);
@@ -109,8 +109,8 @@ export default function LoginScreen() {
             />
 
             <Input
-              label="Contraseña"
-              placeholder="Escribe tu contraseña aquí"
+              label={t("auth.login.passwordLabel")}
+              placeholder={t("auth.login.passwordPlaceholder")}
               value={password}
               onChangeText={(text) => {
                 setPassword(text);
@@ -125,13 +125,13 @@ export default function LoginScreen() {
             <Link href="/(auth)/forgot-password" asChild>
               <Pressable style={styles.forgotPassword}>
                 <Text style={styles.forgotPasswordText}>
-                  ¿Olvidaste tu contraseña?
+                  {t("auth.login.forgotPassword")}
                 </Text>
               </Pressable>
             </Link>
 
             <Button
-              title="Iniciar Sesión"
+              title={t("auth.login.loginButton")}
               onPress={handleLogin}
               isLoading={isLoading}
               fullWidth
@@ -140,15 +140,19 @@ export default function LoginScreen() {
 
             <View style={styles.divider}>
               <View style={styles.dividerLine} />
-              <Text style={styles.dividerText}>o continúa con</Text>
+              <Text style={styles.dividerText}>
+                {t("auth.login.orContinueWith")}
+              </Text>
               <View style={styles.dividerLine} />
             </View>
 
             <View style={styles.footer}>
-              <Text style={styles.footerText}>¿Nuevo aquí? </Text>
+              <Text style={styles.footerText}>{t("auth.login.newHere")} </Text>
               <Link href="/(auth)/register" asChild>
                 <Pressable>
-                  <Text style={styles.footerLink}>Crea una cuenta</Text>
+                  <Text style={styles.footerLink}>
+                    {t("auth.login.createAccount")}
+                  </Text>
                 </Pressable>
               </Link>
             </View>

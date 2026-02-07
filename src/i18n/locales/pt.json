@@ -1,0 +1,62 @@
+{
+  "auth": {
+    "login": {
+      "title": "Bem-vindo",
+      "subtitle": "Seu espaço de crescimento pessoal",
+      "emailLabel": "Endereço de email",
+      "emailPlaceholder": "Digite seu endereço de email",
+      "passwordLabel": "Senha",
+      "passwordPlaceholder": "Digite sua senha aqui",
+      "forgotPassword": "Esqueceu sua senha?",
+      "loginButton": "Entrar",
+      "orContinueWith": "ou continue com",
+      "newHere": "Novo aqui?",
+      "createAccount": "Criar uma conta",
+      "loginError": "Erro ao fazer login"
+    },
+    "register": {
+      "nameLabel": "Nome Completo",
+      "namePlaceholder": "ex. João Silva",
+      "emailLabel": "Endereço de email",
+      "emailPlaceholder": "Digite seu endereço de email",
+      "passwordLabel": "Senha",
+      "passwordPlaceholder": "Crie sua senha",
+      "confirmPasswordLabel": "Confirmar Senha",
+      "confirmPasswordPlaceholder": "Digite novamente sua senha",
+      "registerButton": "Criar Conta",
+      "alreadyHaveAccount": "Já tem uma conta?",
+      "signIn": "Entrar",
+      "termsPrefix": "Ao se registrar, você aceita nossos",
+      "terms": "Termos",
+      "and": "e",
+      "privacyPolicy": "Política de Privacidade",
+      "accountCreated": "Conta criada!",
+      "verifyEmail": "Por favor, verifique seu email para ativar sua conta.",
+      "goToLogin": "Ir para Login",
+      "registerError": "Erro ao registrar"
+    },
+    "forgotPassword": {
+      "title": "Recuperar Conta",
+      "subtitle": "Enviaremos instruções para seu email",
+      "emailLabel": "Endereço de email",
+      "emailPlaceholder": "Digite o email da sua conta",
+      "sendButton": "Enviar Instruções",
+      "backToLogin": "Voltar ao Início",
+      "emailSent": "Email enviado!",
+      "checkInbox": "Verifique sua caixa de entrada para redefinir sua senha.",
+      "sendError": "Erro ao enviar"
+    },
+    "validation": {
+      "emailRequired": "O endereço de email é obrigatório",
+      "emailInvalid": "Formato de email inválido",
+      "emailTooLong": "O endereço de email é muito longo",
+      "passwordRequired": "A senha é obrigatória",
+      "confirmPasswordRequired": "Por favor, confirme sua senha",
+      "passwordsNoMatch": "As senhas não coincidem",
+      "nameRequired": "O nome completo é obrigatório",
+      "nameTooShort": "O nome é muito curto",
+      "fullNameRequired": "Digite seu primeiro e último nome",
+      "nameInvalidChars": "O nome contém caracteres inválidos"
+    }
+  }
+}

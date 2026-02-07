@@ -10,6 +10,9 @@ import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 
+// Initialize i18n before any screens render
+import "../src/i18n";
+
 import { useColorScheme } from "react-native";
 import { AuthProvider } from "../src/contexts/AuthContext";
 

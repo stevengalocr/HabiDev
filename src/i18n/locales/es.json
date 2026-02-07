@@ -1,0 +1,62 @@
+{
+  "auth": {
+    "login": {
+      "title": "Bienvenido",
+      "subtitle": "Tu espacio de crecimiento personal",
+      "emailLabel": "Correo Electrónico",
+      "emailPlaceholder": "Ingresa tu correo electrónico",
+      "passwordLabel": "Contraseña",
+      "passwordPlaceholder": "Escribe tu contraseña aquí",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "loginButton": "Iniciar Sesión",
+      "orContinueWith": "o continúa con",
+      "newHere": "¿Nuevo aquí?",
+      "createAccount": "Crea una cuenta",
+      "loginError": "Error al iniciar sesión"
+    },
+    "register": {
+      "nameLabel": "Nombre Completo",
+      "namePlaceholder": "Ej. Steven Galo",
+      "emailLabel": "Correo Electrónico",
+      "emailPlaceholder": "Ingresa tu correo electrónico",
+      "passwordLabel": "Contraseña",
+      "passwordPlaceholder": "Crea tu contraseña",
+      "confirmPasswordLabel": "Confirmar Contraseña",
+      "confirmPasswordPlaceholder": "Vuelve a escribir tu contraseña",
+      "registerButton": "Crear Cuenta",
+      "alreadyHaveAccount": "¿Ya tienes cuenta?",
+      "signIn": "Inicia sesión",
+      "termsPrefix": "Al registrarte, aceptas nuestros",
+      "terms": "Términos",
+      "and": "y",
+      "privacyPolicy": "Política de Privacidad",
+      "accountCreated": "¡Cuenta creada!",
+      "verifyEmail": "Por favor verifica tu correo electrónico para activar tu cuenta.",
+      "goToLogin": "Ir al Login",
+      "registerError": "Error al registrarse"
+    },
+    "forgotPassword": {
+      "title": "Recuperar Cuenta",
+      "subtitle": "Te enviaremos las instrucciones a tu correo",
+      "emailLabel": "Correo Electrónico",
+      "emailPlaceholder": "Ingresa el correo de tu cuenta",
+      "sendButton": "Enviar Instrucciones",
+      "backToLogin": "Volver al Inicio",
+      "emailSent": "¡Correo enviado!",
+      "checkInbox": "Revisa tu bandeja de entrada para restablecer tu contraseña.",
+      "sendError": "Error al enviar"
+    },
+    "validation": {
+      "emailRequired": "El correo electrónico es requerido",
+      "emailInvalid": "Formato de correo electrónico inválido",
+      "emailTooLong": "El correo electrónico es demasiado largo",
+      "passwordRequired": "La contraseña es requerida",
+      "confirmPasswordRequired": "Confirma tu contraseña",
+      "passwordsNoMatch": "Las contraseñas no coinciden",
+      "nameRequired": "El nombre completo es requerido",
+      "nameTooShort": "El nombre es demasiado corto",
+      "fullNameRequired": "Ingresa tu nombre y apellido",
+      "nameInvalidChars": "El nombre contiene caracteres inválidos"
+    }
+  }
+}
