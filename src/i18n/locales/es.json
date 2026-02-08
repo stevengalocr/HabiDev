@@ -15,8 +15,9 @@
       "loginError": "Error al iniciar sesión"
     },
     "register": {
+      "joinTitle": "Únete a HabiDev y domina tus hábitos",
       "nameLabel": "Nombre Completo",
-      "namePlaceholder": "Ej. Steven Galo",
+      "namePlaceholder": "Ej. HabiDev",
       "emailLabel": "Correo Electrónico",
       "emailPlaceholder": "Ingresa tu correo electrónico",
       "passwordLabel": "Contraseña",

@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "../../src/components/ui/Button";
 import { Input } from "../../src/components/ui/Input";
 import { TugaAvatar } from "../../src/components/ui/TugaAvatar";
+import { LanguageSelector } from "../../src/components/ui/LanguageSelector";
 import { useAuth } from "../../src/contexts/AuthContext";
 import { Colors } from "../../src/theme/Colors";
 import { typography } from "../../src/theme/typography";
@@ -73,14 +74,17 @@ export default function ForgotPasswordScreen() {
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
+          {/* Language Selector */}
+          <View style={styles.languageSelectorContainer}>
+            <LanguageSelector />
+          </View>
+
           <View style={styles.header}>
             <TugaAvatar
               size={320}
               animated={true}
               imageSource={require("../../assets/forgot-password.png")}
             />
-
-            <Text style={styles.title}>{t("auth.forgotPassword.title")}</Text>
             <Text style={styles.subtitle}>
               {t("auth.forgotPassword.subtitle")}
             </Text>
@@ -144,10 +148,16 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     justifyContent: "center",
   },
+  languageSelectorContainer: {
+    position: "absolute",
+    top: 16,
+    right: 24,
+    zIndex: 10,
+  },
   header: {
     alignItems: "center",
-    marginBottom: 40,
-    gap: 24,
+    marginBottom: 24, // Reduced from 40
+    gap: 12, // Reduced from 24
   },
   title: {
     fontSize: typography.fontSize["2xl"],
@@ -161,9 +171,11 @@ const styles = StyleSheet.create({
     fontSize: typography.fontSize.base,
     color: Colors.textSecondary,
     textAlign: "center",
-    marginBottom: 12,
+    marginBottom: 12, // Reduced bottom margin
+    marginTop: -4, // Pull closer to image
     lineHeight: 24,
-    maxWidth: 280,
+    maxWidth: 320, // Slightly wider for longer text
+    fontWeight: typography.fontWeight.medium, // Make it pop a bit more
   },
   form: {
     width: "100%",

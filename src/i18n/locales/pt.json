@@ -15,6 +15,7 @@
       "loginError": "Erro ao fazer login"
     },
     "register": {
+      "joinTitle": "Junte-se ao HabiDev e domine seus hábitos",
       "nameLabel": "Nome Completo",
       "namePlaceholder": "ex. João Silva",
       "emailLabel": "Endereço de email",

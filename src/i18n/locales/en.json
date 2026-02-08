@@ -15,6 +15,7 @@
       "loginError": "Login error"
     },
     "register": {
+      "joinTitle": "Join HabiDev and master your habits",
       "nameLabel": "Full Name",
       "namePlaceholder": "e.g. John Doe",
       "emailLabel": "Email Address",

@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "../../src/components/ui/Button";
 import { Input } from "../../src/components/ui/Input";
 import { TugaAvatar } from "../../src/components/ui/TugaAvatar";
+import { LanguageSelector } from "../../src/components/ui/LanguageSelector";
 import { useAuth } from "../../src/contexts/AuthContext";
 import { Colors } from "../../src/theme/Colors";
 import { typography } from "../../src/theme/typography";
@@ -80,6 +81,11 @@ export default function LoginScreen() {
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
+          {/* Language Selector */}
+          <View style={styles.languageSelectorContainer}>
+            <LanguageSelector />
+          </View>
+
           {/* Professional Header */}
           <View style={styles.header}>
             <TugaAvatar
@@ -177,6 +183,12 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingBottom: 24,
     justifyContent: "center", // Center content vertically
+  },
+  languageSelectorContainer: {
+    position: "absolute",
+    top: 16,
+    right: 24,
+    zIndex: 10,
   },
   header: {
     alignItems: "center",
