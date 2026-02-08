@@ -1,47 +1,91 @@
 import { Tabs } from "expo-router";
-import { BlurView } from "expo-blur";
+import React from "react";
 import { Platform } from "react-native";
-import { Colors } from "../../src/theme/Colors";
+import { Colors } from "@/theme/Colors";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
+        tabBarActiveTintColor: Colors.primary,
+        tabBarInactiveTintColor: Colors.textTertiary,
         headerShown: false,
         tabBarStyle: {
-          position: "absolute",
+          backgroundColor: "#FFFFFF",
           borderTopWidth: 0,
-          backgroundColor:
-            Platform.OS === "ios" ? "transparent" : Colors.surface,
-          elevation: 0,
-          height: 60,
-          paddingBottom: 10,
+          elevation: 10,
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: -2 },
+          shadowOpacity: 0.1,
+          shadowRadius: 4,
+          height: Platform.OS === "ios" ? 88 : 60,
+          paddingBottom: Platform.OS === "ios" ? 28 : 8,
+          paddingTop: 8,
         },
-        tabBarBackground: () =>
-          Platform.OS === "ios" ? (
-            <BlurView tint="dark" intensity={80} style={{ flex: 1 }} />
-          ) : null,
-        tabBarActiveTintColor: Colors.primary,
-        tabBarInactiveTintColor: Colors.textSecondary,
+        tabBarLabelStyle: {
+          fontWeight: "600",
+          fontSize: 10,
+          marginBottom: 4,
+        },
       }}
     >
       <Tabs.Screen
-        name="explore"
+        name="index"
         options={{
-          title: "Explore",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="compass" size={24} color={color} />
+          title: "Inicio",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "home" : "home-outline"}
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="habits"
+        options={{
+          title: "Hábitos",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "list" : "list-outline"}
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="stats"
+        options={{
+          title: "Estadísticas",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "stats-chart" : "stats-chart-outline"}
+              size={24}
+              color={color}
+            />
           ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          title: "Profile",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="person" size={24} color={color} />
+          title: "Perfil",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "person" : "person-outline"}
+              size={24}
+              color={color}
+            />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="explore"
+        options={{
+          href: null,
         }}
       />
     </Tabs>
